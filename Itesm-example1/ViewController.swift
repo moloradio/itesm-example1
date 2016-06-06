@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var respuesta: UITextView!
     
     @IBAction func buscar(sender: AnyObject) {
-        asincrono()
+        sincrono()
     }
     
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         let bloque = {(datos: NSData?, resp:NSURLResponse?, error: NSError?) -> Void in
             let texto = NSString(data: datos!, encoding: NSUTF8StringEncoding)
             print(texto!)
-            //self.respuesta.text =
+            self.respuesta.text = texto! as String
         }
         
         let dt = sesion.dataTaskWithURL(url!, completionHandler: bloque)
@@ -44,11 +44,12 @@ class ViewController: UIViewController {
     }
     
     func sincrono(){
-        let urls = "http://dia.ccm.itesm.mx/"
+        let urls = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + libro.text!
         let url = NSURL(string: urls)
         let datos:NSData? = NSData(contentsOfURL: url!)
         let texto = NSString(data:datos!, encoding: NSUTF8StringEncoding)
-        print(texto!)
+        //print(texto!)
+        self.respuesta.text = texto! as String
     }
 
     override func didReceiveMemoryWarning() {
