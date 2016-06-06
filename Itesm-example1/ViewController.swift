@@ -47,9 +47,14 @@ class ViewController: UIViewController {
         let urls = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:" + libro.text!
         let url = NSURL(string: urls)
         let datos:NSData? = NSData(contentsOfURL: url!)
-        let texto = NSString(data:datos!, encoding: NSUTF8StringEncoding)
-        //print(texto!)
-        self.respuesta.text = texto! as String
+        
+        if (datos == nil){
+            self.respuesta.text = "No hay conexion a internet"
+        }else{
+            let texto = NSString(data:datos!, encoding: NSUTF8StringEncoding)
+            //print(texto!)
+            self.respuesta.text = texto! as String
+        }
     }
 
     override func didReceiveMemoryWarning() {
