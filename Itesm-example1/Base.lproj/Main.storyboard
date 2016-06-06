@@ -20,7 +20,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bbk-iS-Oqc">
                                 <rect key="frame" x="63" y="60" width="233" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="search"/>
                                 <connections>
                                     <action selector="buscar:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="8VK-fG-jRE"/>
                                 </connections>

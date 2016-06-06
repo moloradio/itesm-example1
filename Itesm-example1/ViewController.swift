@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         let bloque = {(datos: NSData?, resp:NSURLResponse?, error: NSError?) -> Void in
             let texto = NSString(data: datos!, encoding: NSUTF8StringEncoding)
             print(texto!)
-            //self.respuesta.text = texto
+            //self.respuesta.text =
         }
         
         let dt = sesion.dataTaskWithURL(url!, completionHandler: bloque)
